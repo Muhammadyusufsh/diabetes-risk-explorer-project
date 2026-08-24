@@ -1,0 +1,99 @@
+{
+  "dataset": {
+    "rows": 253680,
+    "features": 21,
+    "positive_class_count": 35346,
+    "positive_rate": 0.13933301797540207,
+    "test_rows": 50736
+  },
+  "metrics": {
+    "Logistic regression": {
+      "accuracy": 0.7315121412803532,
+      "precision": 0.3107491480390458,
+      "recall": 0.7610694581977648,
+      "f1": 0.441309162496924,
+      "roc_auc": 0.8196313622060201,
+      "average_precision": 0.39258517361846546
+    },
+    "Histogram gradient boosting": {
+      "accuracy": 0.8652041942604857,
+      "precision": 0.5575,
+      "recall": 0.1577309378978639,
+      "f1": 0.24589260116881684,
+      "roc_auc": 0.8273973019802323,
+      "average_precision": 0.4244089280555894
+    }
+  },
+  "bmi": null,
+  "top_features": [
+    {
+      "feature": "GenHlth",
+      "importance_mean": 0.05401,
+      "importance_std": 0.00347
+    },
+    {
+      "feature": "BMI",
+      "importance_mean": 0.03606,
+      "importance_std": 0.00086
+    },
+    {
+      "feature": "Age",
+      "importance_mean": 0.03007,
+      "importance_std": 0.00274
+    },
+    {
+      "feature": "HighBP",
+      "importance_mean": 0.02031,
+      "importance_std": 0.00149
+    },
+    {
+      "feature": "HighChol",
+      "importance_mean": 0.01167,
+      "importance_std": 0.00038
+    },
+    {
+      "feature": "Income",
+      "importance_mean": 0.00471,
+      "importance_std": 0.00038
+    },
+    {
+      "feature": "CholCheck",
+      "importance_mean": 0.00381,
+      "importance_std": 0.00065
+    },
+    {
+      "feature": "HvyAlcoholConsump",
+      "importance_mean": 0.00318,
+      "importance_std": 0.00069
+    },
+    {
+      "feature": "Sex",
+      "importance_mean": 0.00305,
+      "importance_std": 0.00042
+    },
+    {
+      "feature": "HeartDiseaseorAttack",
+      "importance_mean": 0.00112,
+      "importance_std": 0.00062
+    }
+  ],
+  "method": {
+    "split": "80/20 stratified train/test split, random_state=42",
+    "threshold": "0.50 for accuracy/precision/recall/F1",
+    "primary_model": "Histogram gradient boosting"
+  },
+  "bmi_by_outcome": {
+    "0": {
+      "count": 218334,
+      "mean": 27.81,
+      "median": 27.0,
+      "std": 6.29
+    },
+    "1": {
+      "count": 35346,
+      "mean": 31.94,
+      "median": 31.0,
+      "std": 7.36
+    }
+  }
+}
