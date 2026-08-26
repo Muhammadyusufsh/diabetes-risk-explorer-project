@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diabetes Risk Explorer — интерактивная демонстрация</TITLE>
+<style>
+:root{--ink:#102a43;--muted:#526777;--paper:#f7f5ef;--panel:#fffdf9;--blue:#1c4e80;--cyan:#2e7d8a;--gold:#d89b35;--coral:#c95844;--line:#d7d0c4;--soft:#e8f1f1}*{box-sizing:border-box}body{margin:0 auto;max-width:1200px;padding:56px 32px 72px;background:var(--paper);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.55}.kicker{font:700 13px Arial,sans-serif;color:var(--cyan);letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px}.title{font-size:clamp(50px,8vw,88px);line-height:.9;margin:0 0 20px;max-width:800px}.lead{font-size:22px;max-width:900px;margin:0 0 22px}.notice{float:right;width:310px;background:var(--soft);border:1px solid #b6cfce;padding:20px;font:16px/1.45 Arial,sans-serif;margin:0 0 20px 30px}.notice b{display:block;font-size:19px;margin-bottom:7px}.rule{clear:both;border:0;border-top:3px solid var(--ink);margin:44px 0 45px}h2{font-size:34px;line-height:1.1;margin:44px 0 15px;padding-top:4px}h3{font:700 18px Arial,sans-serif;margin:0 0 9px}.intro{font-size:20px;max-width:960px}.fact{display:inline-block;vertical-align:top;width:32.7%;min-height:125px;margin:20px 0 0;padding:19px;background:var(--panel);border:1px solid var(--line);font:14px Arial,sans-serif;color:var(--muted)}.fact b{display:block;font:700 38px Arial,sans-serif;color:var(--blue);margin-bottom:5px}.step{display:inline-block;vertical-align:top;width:24.5%;min-height:170px;margin:18px 0 0;padding:18px;background:var(--panel);border:1px solid var(--line);font-size:15px}.num{font:700 13px Arial,sans-serif;color:var(--coral);letter-spacing:.08em}.chart{display:block;max-width:760px;width:100%;background:#fff;border:1px solid var(--line);padding:14px;margin:17px 0 8px}.caption{font:13px Arial,sans-serif;color:var(--muted);max-width:760px}.explain{background:var(--soft);border:1px solid #b6cfce;padding:20px;font-size:17px;max-width:960px}.metric{display:inline-block;vertical-align:top;width:24.5%;min-height:126px;padding:15px;border:1px solid #b6cfce;font:14px/1.4 Arial,sans-serif}.metric b{display:block;color:var(--blue);font-size:16px;margin-bottom:6px}.model{display:inline-block;vertical-align:top;width:49.5%;min-height:205px;margin:18px 0 0;padding:22px;background:var(--panel);border:1px solid var(--line);font-size:16px}.model b{color:var(--blue)}.warning{padding:20px;background:#fff5e9;border:1px solid #e3b76e;max-width:960px}.assistant-title{background:var(--ink);color:white;padding:31px 28px 5px;margin:48px 0 0}.assistant-text{background:var(--ink);color:#c9d6df;padding:0 28px 25px;margin:0;font-size:17px}.quick{background:var(--ink);color:#e4f1f3;border:1px solid #91b5c0;padding:9px 11px;margin:0 5px 8px 0;font:14px Arial,sans-serif;cursor:pointer}.chat{background:#fffdf9;border:1px solid var(--line);padding:20px;margin:0;font-size:17px}.label{font:700 12px Arial,sans-serif;color:var(--cyan);letter-spacing:.1em;text-transform:uppercase}.question{width:72%;padding:13px;border:1px solid var(--line);font:16px Arial,sans-serif;margin-top:12px}.send{padding:14px 22px;background:var(--gold);border:0;color:#152833;font-weight:bold;cursor:pointer}.source{font:13px Arial,sans-serif;color:var(--muted);margin-top:45px}.source a{color:var(--blue)}@media(max-width:760px){body{padding:34px 18px 60px}.notice{float:none;width:auto;margin:0 0 22px}.fact,.step,.metric,.model{display:block;width:100%;margin-top:10px}.question{width:70%}.title{font-size:52px}}
+</STYLE>
+<body>
+<p class="kicker">Учебный проект по Data Science · 2026
+<h1 class="title">Diabetes Risk Explorer
+<p class="lead">Интерактивное исследование: может ли алгоритм находить закономерности в обезличенных анкетах о здоровье?
+<p class="notice"><b>Важно</b>Это учебный анализ открытых данных. Он не ставит диагнозы, не даёт медицинские рекомендации и не должен использоваться для решений о конкретных людях.
+<hr class="rule">
+<h2>Что это за проект?
+<p class="intro">Это не медицинское приложение. Я взял большую анонимную таблицу с ответами людей на вопросы о здоровье и проверил, может ли компьютер заметить статистические закономерности между ответами и самооценкой статуса диабета.
+<p class="fact"><b>253 680</b>анонимных анкет
+<p class="fact"><b>21</b>признак: возраст, BMI, давление и другие
+<p class="fact"><b>2</b>модели для честного сравнения
+<h2>Как проходило исследование
+<p class="step"><span class="num">ШАГ 01</span><br><b>Данные</b><br>Открытые обезличенные анкеты CDC: без имён, адресов и личных контактов.
+<p class="step"><span class="num">ШАГ 02</span><br><b>Обучение</b><br>80% таблицы модели использовали, чтобы искать повторяющиеся закономерности.
+<p class="step"><span class="num">ШАГ 03</span><br><b>Проверка</b><br>20% новых анкет были оставлены для честного экзамена моделей.
+<p class="step"><span class="num">ШАГ 04</span><br><b>Вывод</b><br>Я сравнил не только точность, но и то, кого модель замечает или пропускает.
+<h2>Что показывает этот график?
+<img class="chart" src="model_metrics.png" alt="Сравнение показателей двух моделей">
+<p class="caption">Два набора столбиков: слева простая модель, справа более сложная. Каждый цвет — отдельный показатель качества.
+<p class="explain"><b>Главная мысль:</b> нельзя выбирать медицинскую модель по одной цифре «accuracy». В этих данных положительных случаев около 14%. Модель, которая всегда отвечает «нет», выглядела бы точной примерно в 86% случаев — но никого бы не заметила.
+<p class="metric"><b>Accuracy</b>Сколько ответов верны в целом.
+<p class="metric"><b>Recall</b>Сколько нужных случаев модель заметила.
+<p class="metric"><b>Precision</b>Как часто её «сигнал» оказался верным.
+<p class="metric"><b>ROC-AUC</b>Насколько хорошо она ранжирует случаи.
+<h2>Сравнение двух подходов
+<p class="model"><b>Простая модель</b><br><br>Она заметила больше людей из целевой группы: <b>76.1% recall</b>. Но часто поднимала ложную тревогу.<br><br><b>Смысл:</b> лучше «не пропустить», но больше ошибок.
+<p class="model"><b>Более сложная модель</b><br><br>Она лучше ранжировала записи: <b>ROC-AUC 0.827</b>, но при стандартной настройке заметила лишь <b>15.8%</b> целевых случаев.<br><br><b>Смысл:</b> высокая общая точность сама по себе не означает практическую полезность.
+<p class="warning"><b>Главный вывод проекта:</b> для задач, связанных со здоровьем, выбор модели и порога зависит от того, какая ошибка опаснее. Это нельзя решать автоматически одной универсальной цифрой.
+<h2>Что чаще использовала модель?
+<img class="chart" src="feature_importance.png" alt="Важность признаков">
+<p class="caption">Чем длиннее столбик, тем заметнее менялся результат модели, когда этот признак перемешивали.
+<p class="explain">Самыми заметными оказались общая самооценка здоровья, BMI, возраст, высокое давление и высокий холестерин. Но это <b>не доказывает причину</b>: модель показывает статистическую связь в этой таблице, а не медицинское объяснение, почему возникает заболевание.
+<h2 class="assistant-title">Спроси помощника о проекте
+<p class="assistant-text">Этот помощник объясняет элементы демонстрации простыми словами. Он отвечает только о проекте и не даёт медицинских советов.
+<input class="quick" type="button" value="Что показывает график?" data-q="Что показывает график?">
+<input class="quick" type="button" value="Почему accuracy недостаточно?" data-q="Почему accuracy недостаточно?">
+<input class="quick" type="button" value="Зачем две модели?" data-q="Зачем две модели?">
+<input class="quick" type="button" value="Что значат столбики?" data-q="Что значат столбики?">
+<input class="quick" type="button" value="Какие данные использовались?" data-q="Какие данные использовались?">
+<p class="chat"><span class="label">Объяснение помощника</span><br><span id="answer">Нажми на один из вопросов выше или напиши свой. Например: «Что такое recall?»
+<input class="question" id="question" placeholder="Напиши вопрос о проекте…">
+<input class="send" id="send" type="button" value="Спросить">
+<p class="source">Источники данных: <a href="https://archive.ics.uci.edu/dataset/891/cdc%2Bdiabetes%2Bhealth%2Bindicators" target="_blank" rel="noopener">UCI CDC Diabetes Health Indicators</a> и CDC BRFSS. Сделано как воспроизводимый учебный проект по анализу данных.
+<script src="explainer.js"></SCRIPT>
